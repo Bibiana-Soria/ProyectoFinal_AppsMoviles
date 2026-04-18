@@ -37,20 +37,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '400'
   },
-  boton: {
-    backgroundColor: "#e3e3e3", 
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    width: 100,
-    height: 40,
-    marginTop: 10
-  },
-  texto_boton: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: 'black'
-  },
   imagen:{
     height:180,
     width: 198,
