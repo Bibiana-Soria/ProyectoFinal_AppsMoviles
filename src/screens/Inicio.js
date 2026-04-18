@@ -1,18 +1,17 @@
-/*
-nombre del proyecto
-nombre del equipo
-imagen relacionada con el carrito
-boton o accesos a las otras pantallas
-*/
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView,Image } from 'react-native';
+
 
 export default function Inicio({ navigation }) {
   return (
     <ScrollView contentContainerStyle = {styles.container}>
-      <Text style = {styles.titulo}>Carrito Seguidor de Linea</Text>
-      <Text style = {styles.titulo}>Equipo: Chick and Duck</Text>
-      <TouchableOpacity style = {styles.boton} onPress={()=>{navigation.navigate('Equipo')}}><Text style = {styles.texto_boton}>Hola</Text></TouchableOpacity>
+      <Text style = {styles.titulo}>Proyecto</Text>
+      <Text style = {styles.texto}>Carrito Seguidor de Linea</Text>
+      <Text style = {styles.titulo}>Equipo:</Text>
+      <Text style = {styles.texto}>Garcia Hernandez Ana Gabriela</Text>
+      <Text style = {styles.texto}>Soria Muñoz Bibiana Paola</Text>
+      <Text style = {styles.texto}>5°B BIS</Text>
+      <Image source={require('../../assets/malvavisco.jpeg')}style ={styles.imagen}/>
     </ScrollView>
   );
 }
@@ -21,16 +20,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: "#26528F"
   },
   titulo: {
     fontSize: 20,
-    fontWeight: '600',
-    margin: 10,
-    backgroundColor: 'blue',
-    padding: 15,
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: '600',
+    marginBottom: 10
+  },
+  texto:{
+    fontSize: 15,
+    marginBottom: 5,
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '400'
   },
   boton: {
     backgroundColor: "#e3e3e3", 
@@ -45,5 +50,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: 'black'
+  },
+  imagen:{
+    height:180,
+    width: 198,
+    borderRadius: 35,
+    margin: 20
   }
+  
 });
