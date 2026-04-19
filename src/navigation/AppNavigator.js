@@ -95,11 +95,7 @@ export default function AppNavigator(){
                         fontWeight: '400',
                     },
                     tabBarStyle:{
-                        height: 70,
-                        paddingBottom: 8,
-                        //backgroundColor: "#EEBC1D",
-                        backgroundColor: "#5d5e5f"
-
+                        backgroundColor: "#EEBC1D",
                     }
                 })}
             >
