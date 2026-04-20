@@ -33,7 +33,7 @@ export default function Creditos() {
       </View>
 
       <Text style={styles.pie}>
-        Desarrollado con mucho esfuerzo por el equipo: Chuck and Duck.
+        Desarrollado con mucho esfuerzo por el equipo: Chick and Duck.
       </Text>
     </ScrollView>
   );
