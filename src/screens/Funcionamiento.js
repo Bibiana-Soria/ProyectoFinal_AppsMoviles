@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text , StyleSheet, ScrollView, Image} from "react-native";
 
 const pasos = [
-  {numero:"1", texto: "Los sesnores infrarrojos emiten luz hacia el suelo."},
+  {numero:"1", texto: "Los sensores infrarrojos emiten luz hacia el suelo."},
   {numero:"2", texto: "Si la luz se refleja, el sensor detecta la presencia de una línea."},
   {numero:"3", texto: "El microcontrolador procesa la información de los sensores."},
   {numero:"4", texto: "Si el sensor izquierdo detecta la línea, el carrito gira a la izquierda."},

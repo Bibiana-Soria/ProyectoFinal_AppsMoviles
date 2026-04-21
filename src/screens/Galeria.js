@@ -89,11 +89,15 @@ export default function Galeria() {
         </ScrollView>
       </View>
 
+      {/* Modal Fotos */}
       <Modal visible={fotoModal} transparent animationType="fade">
-        <TouchableOpacity
-          style={styles.modal_fondo}
-          onPress={() => setFotoModal(false)}
-        >
+        <View style={styles.modal_fondo}>
+          <TouchableOpacity
+            style={styles.modal_cerrar_boton}
+            onPress={() => setFotoModal(false)}
+          >
+            <Text style={styles.modal_cerrar_texto}>✕</Text>
+          </TouchableOpacity>
           {itemSeleccionado && (
             <Image
               source={itemSeleccionado}
@@ -101,12 +105,18 @@ export default function Galeria() {
               resizeMode="contain"
             />
           )}
-          <Text style={styles.modal_cerrar}>✕ Toca para cerrar</Text>
-        </TouchableOpacity>
+        </View>
       </Modal>
 
+      {/* Modal Videos */}
       <Modal visible={videoModal} transparent animationType="slide">
         <View style={styles.modal_fondo}>
+          <TouchableOpacity
+            style={styles.modal_cerrar_boton}
+            onPress={cerrarVideo}
+          >
+            <Text style={styles.modal_cerrar_texto}>✕</Text>
+          </TouchableOpacity>
           {itemSeleccionado && (
             <Video
               ref={videoRef}
@@ -117,9 +127,6 @@ export default function Galeria() {
               shouldPlay
             />
           )}
-          <TouchableOpacity style={styles.cerrar_boton} onPress={cerrarVideo}>
-            <Text style={styles.cerrar_texto}>✕ Cerrar</Text>
-          </TouchableOpacity>
         </View>
       </Modal>
     </ScrollView>
@@ -177,7 +184,6 @@ const styles = StyleSheet.create({
     fontSize: 48,
     color: "white",
   },
-
   descripcion_box: {
     padding: 8,
   },
@@ -193,32 +199,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  modal_cerrar_boton: {
+    position: "absolute",
+    top: 50,
+    right: 20,
+    zIndex: 10,
+    backgroundColor: "rgba(255,255,255,0.2)",
+    borderRadius: 20,
+    width: 36,
+    height: 36,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modal_cerrar_texto: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "700",
+  },
   modal_imagen: {
     width: width * 0.95,
     height: width * 0.95,
     borderRadius: 10,
   },
-  modal_cerrar: {
-    color: "white",
-    marginTop: 15,
-    fontSize: 14,
-    opacity: 0.7,
-  },
   modal_video: {
     width: width * 0.95,
     height: width * 0.6,
     borderRadius: 10,
-  },
-  cerrar_boton: {
-    marginTop: 20,
-    backgroundColor: "#26528F",
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderRadius: 20,
-  },
-  cerrar_texto: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 15,
   },
 });
